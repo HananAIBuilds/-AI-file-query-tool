@@ -34,7 +34,7 @@ Most tutorials teach AI concepts in isolation — API calls, prompt engineering,
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/HananAIBuilds/-ai-file-query-tool.git
+   git clone https://github.com/HananAIBuilds/ai-file-query-tool.git
    cd ai-file-query-tool
    ```
 
