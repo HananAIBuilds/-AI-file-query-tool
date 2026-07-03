@@ -70,7 +70,7 @@ def get_api_key():
 
 st.set_page_config(page_title="AI File Query Tool", page_icon="📄")
 st.title("📄 AI File Query Tool")
-st.write("Apni file upload karein (.txt, .pdf, .docx, .csv, .xlsx) aur us ke baray mein sawal poochein.")
+st.write("Upload your file here (.txt, .pdf, .docx, .csv, .xlsx) and Ask quries about it.")
 
 api_key = get_api_key()
 
@@ -79,27 +79,27 @@ uploaded_file = st.file_uploader(
     type=["txt", "pdf", "docx", "csv", "xlsx"]
 )
 
-query = st.text_input("Aap kya jaanna chahte hain is file se?")
+query = st.text_input("What do you want to know about this file?")
 
-if st.button("Puchein"):
+if st.button("Ask"):
     if not api_key:
         st.error("Pehle apni Gemini API key daalein.")
     elif not uploaded_file:
-        st.error("Pehle koi file upload karein.")
+        st.error("Upload ur file first.")
     elif not query:
-        st.error("Koi sawal likhein.")
+        st.error("ask something.")
     else:
-        with st.spinner("File padhi ja rahi hai aur AI se jawab liya ja raha hai..."):
+        with st.spinner("The file is being read, and a response is being generated using AI..."):
             my_data = read_file(uploaded_file)
 
             if my_data is None:
-                st.error("Yeh file type support nahi hai.")
+                st.error("This file type is not supported.")
             else:
                 client = genai.Client(api_key=api_key)
 
-                prompt = f"""Neechay mera data diya gaya hai. Isay carefully read aur
-observe karo, aur user jo bhi question poochay uska well organized aur
-simple andaz mein jawab do, sirf isi data ke mutabiq.
+                prompt = f"""My data is provided below. You carefully read and review it 
+                and answer any questions asked by the user in a well-organized and simple manner, 
+                strictly based on that data.
 
 User question: {query}
 
