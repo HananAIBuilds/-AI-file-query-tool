@@ -63,9 +63,8 @@ def main():
 
     query = input("What do you want to know about this file? ")
 
-    prompt = f"""Neechay mera data diya gaya hai. Isay carefully read or
-observe karo, aur user jo bhi question poochay uska well organized aur
-simple way mein ans do, sirf isi data ke mutabiq.
+    prompt = f"""My data is provided below, carefully review it and answer any questions asked by the user in a 
+    well-organized and simple manner, strictly based on that data.
 
 User question: {query}
 
