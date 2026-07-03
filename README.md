@@ -70,9 +70,14 @@ AI Response:
 ## Possible Future Improvements
 
 - Add support for `.json` and image-based (scanned) PDFs via OCR
-- Add a simple web interface (Streamlit)
 - Chunk large files to handle documents beyond the model's context window
 - Add automated tests
+
+## Live Demo
+
+🔗 Try it here: [ai-file-query-tool.streamlit.app](https://ai-file-query-tool.streamlit.app/)
+
+Upload a file, ask a question, get an instant AI-generated answer — no setup required.
 
 ## Author
 
